@@ -11,21 +11,17 @@ namespace SystemIODemo
         public void Serialization()
         {
             Demo sample = new Demo();
-            FileStream fileStream = new FileStream(@"C:\Users\lenovo\Desktop\BridgeLabz\SystemIODemo\SystemIODemo\sample.txt", FileMode.Create);
+            FileStream fileStream = new FileStream(@"C:\Users\lenovo\Desktop\BridgeLabz\SystemIODemo\SystemIODemo\deserializesample.txt", FileMode.Create);
             BinaryFormatter formatter = new BinaryFormatter();
             formatter.Serialize(fileStream, sample);
-            Console.ReadLine();
         }
         public void DeSerialization()
         {
-            FileStream fileStream = new FileStream(@"C:\Users\lenovo\Desktop\BridgeLabz\SystemIODemo\SystemIODemo\sample.txt", FileMode.Open);
+            FileStream fileStream = new FileStream(@"C:\Users\lenovo\Desktop\BridgeLabz\SystemIODemo\SystemIODemo\deserializesample.txt", FileMode.Open);
             BinaryFormatter formatter = new BinaryFormatter();
             Demo deserializedSampledemo = (Demo)formatter.Deserialize(fileStream);
             Console.WriteLine($"ApplicatioName { deserializedSampledemo.ApplicationName} ---ApplicationId { deserializedSampledemo.ApplicationId}");
-            Console.ReadKey();
         }
-
-
     }
     [Serializable]
     public class Demo

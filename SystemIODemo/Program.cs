@@ -15,6 +15,8 @@ namespace SystemIODemo
             BinarySerialization binarySerialization=new BinarySerialization();
             binarySerialization.Serialization();
             binarySerialization.DeSerialization();
+            XmlSerialDeserial xmlserdes = new XmlSerialDeserial();
+            xmlserdes.SerializeXml();
 
         }
         public static void FileExists()
@@ -34,7 +36,7 @@ namespace SystemIODemo
             lines = File.ReadAllLines(path);
 
             Console.WriteLine(lines[0]);
-            Console.WriteLine(lines[1]);
+            //Console.WriteLine(lines[1]);
         }
 
     }
